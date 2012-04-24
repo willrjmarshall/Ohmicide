@@ -21,6 +21,12 @@ SENDS = [
 
 MUTE_BUTTONS = [23, 22, 15, 14, 5, 7, 6, 4] 
 
-#GRID_HEIGHT = 8
-#GRID_WIDTH = 8
-#GRID = [range(i, GRID_HEIGHT * GRID_WIDTH, GRID_HEIGHT) for i in xrange(GRID_WIDTH)] 
+# Grid of button notes
+MATRIX = [
+    [0, 8,  16, 24, 32, 40, 48, 56],
+    [1, 9,  17, 25, 33, 41, 49, 57],
+    [2, 10, 18, 26, 34, 42, 50, 58],
+    [3, 11, 19, 27, 35, 43, 51, 59],
+    [4, 12, 20, 28, 36, 44, 52, 60]]
+
+
