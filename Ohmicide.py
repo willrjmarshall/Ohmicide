@@ -16,6 +16,7 @@ from _Framework.ChannelTranslationSelector import ChannelTranslationSelector
 
 from _Livid_Framework.LividMixerComponent import LividMixerComponent
 from _Livid_Framework.LividSessionComponent import LividSessionComponent
+from _Livid_Framework.LividTransportComponent import LividTransportComponent
 
 class Ohmicide(ControlSurface):
   __module__ = __name__
@@ -28,6 +29,7 @@ class Ohmicide(ControlSurface):
     # Configure each of the primarily elements
     self.setup_mixer()
     self.setup_session()
+    self.setup_transport()
 
     self.set_suppress_rebuild_requests(False) #Turn rebuild back on, now that we're done setting up
 
@@ -35,6 +37,8 @@ class Ohmicide(ControlSurface):
     self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, crossfader = CROSSFADER, master = MASTER, cue = CUE_VOLUME)
   
   def setup_session(self):
-    # Handily, channel defaults to 0
     self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS)
+
+  def setup_transport(self):
+    self.transport = LividTransportComponent(play = PLAY, stop = STOP)
     

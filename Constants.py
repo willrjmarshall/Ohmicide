@@ -4,6 +4,10 @@ MIDI_NOTE_TYPE = 0
 RETURNS = 0
 CHANNEL = 0 # All things must be on one channel
 
+# Transport
+PLAY = 69
+STOP = 71
+
 # It is assumed that these will use the global channel
 # And will be CCs
 FADERS = [23, 22, 15, 14, 5, 7, 6] 
