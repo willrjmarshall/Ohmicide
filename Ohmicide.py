@@ -37,7 +37,7 @@ class Ohmicide(ControlSurface):
     self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, crossfader = CROSSFADER, master = MASTER, cue = CUE_VOLUME)
   
   def setup_session(self):
-    self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS)
+    self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS, mixer = self.mixer)
 
   def setup_transport(self):
     self.transport = LividTransportComponent(play = PLAY, stop = STOP)
