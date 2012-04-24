@@ -32,9 +32,9 @@ class Ohmicide(ControlSurface):
     self.set_suppress_rebuild_requests(False) #Turn rebuild back on, now that we're done setting up
 
   def setup_mixer(self):
-    self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS)
+    self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, crossfader = CROSSFADER)
   
   def setup_session(self):
     # Handily, channel defaults to 0
-    self.session = LividSessionComponent(matrix = MATRIX)
+    self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS)
     

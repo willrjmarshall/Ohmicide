@@ -7,6 +7,7 @@ CHANNEL = 0 # All things must be on one channel
 # It is assumed that these will use the global channel
 # And will be CCs
 FADERS = [23, 22, 15, 14, 5, 7, 6, 4] 
+CROSSFADER = 24 
 
 # Each channel is a tuple of send encoders from bottom to top
 SENDS = [
@@ -19,8 +20,13 @@ SENDS = [
   [0],
   [2]]
 
-MUTE_BUTTONS = [23, 22, 15, 14, 5, 7, 6, 4] 
+MUTE_BUTTONS = [23, 22, 15, 14, 5, 7, 6, 4]
 
+NAVIGATION_BUTTONS = {
+    'up' : 70,
+    'down' : 78,
+    'left' : 77,
+    'right' : 79}
 # Grid of button notes
 MATRIX = [
     [0, 8,  16, 24, 32, 40, 48, 56],
