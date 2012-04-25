@@ -41,18 +41,19 @@ class Ohmicide(ControlSurface):
         master = MASTER, 
         cue = CUE_VOLUME,
         solos = SOLOS,
-        arms = ARMS,
-        mutes = MUTES)
+        arms = ARMS)
+        #mutes = MUTES)
   
   def setup_session(self):
     self.session = LividSessionComponent(matrix = MATRIX, 
         navigation = NAVIGATION_BUTTONS, 
         scene_launches = SCENE_LAUNCH, 
+        stops = STOPS, 
         mixer = self.mixer)
     self.session_zoom = LividSessionZoomingComponent(self.session, SHIFT)
     
     # Session zoom
 
   def setup_transport(self):
-    self.transport = LividTransportComponent(play = PLAY, stop = STOP)
+    self.transport = LividTransportComponent(play = PLAY, stop = STOP, bpm_up = BPM_UP, bpm_down = BPM_DOWN)
     

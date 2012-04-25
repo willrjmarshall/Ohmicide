@@ -9,6 +9,9 @@ PLAY = 69
 STOP = 71
 SHIFT = 87
 
+BPM_UP = 61
+BPM_DOWN = 62
+
 # It is assumed that these will use the global channel
 # And will be CCs
 FADERS = [23, 22, 15, 14, 5, 7, 6] 
@@ -26,8 +29,6 @@ SENDS = [
   [0]]
 CUE_VOLUME = 2
 
-MUTE_BUTTONS = [23, 22, 15, 14, 5, 7, 6, 4]
-
 NAVIGATION_BUTTONS = {
     'up' : 70,
     'down' : 78,
@@ -43,7 +44,8 @@ MATRIX = [
 
 SCENE_LAUNCH = [56, 57, 58, 59, 60]
 
-MUTES = [5, 13, 21, 29, 37, 45, 53]
+STOPS = [5, 13, 21, 29, 37, 45, 53]
+
 SOLOS = [6, 14, 22, 30, 38, 46, 54]
 ARMS =  [7, 15, 23, 31, 39, 47, 55]
 
