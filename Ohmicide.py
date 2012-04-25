@@ -18,6 +18,7 @@ from _Framework.ChannelTranslationSelector import ChannelTranslationSelector
 from _Livid_Framework.LividMixerComponent import LividMixerComponent
 from _Livid_Framework.LividSessionComponent import LividSessionComponent
 from _Livid_Framework.LividTransportComponent import LividTransportComponent
+from _Livid_Framework.LividSessionZoomingComponent import LividSessionZoomingComponent
 
 class Ohmicide(ControlSurface):
   __module__ = __name__
@@ -44,7 +45,13 @@ class Ohmicide(ControlSurface):
         mutes = MUTES)
   
   def setup_session(self):
-    self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS, mixer = self.mixer)
+    self.session = LividSessionComponent(matrix = MATRIX, 
+        navigation = NAVIGATION_BUTTONS, 
+        scene_launches = SCENE_LAUNCH, 
+        mixer = self.mixer)
+    self.session_zoom = LividSessionZoomingComponent(self.session, SHIFT)
+    
+    # Session zoom
 
   def setup_transport(self):
     self.transport = LividTransportComponent(play = PLAY, stop = STOP)
