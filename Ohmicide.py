@@ -1,5 +1,6 @@
 import Live
 
+
 from Constants import *
 from _Framework.ControlSurface import ControlSurface
 from _Framework.InputControlElement import *
@@ -34,7 +35,13 @@ class Ohmicide(ControlSurface):
     self.set_suppress_rebuild_requests(False) #Turn rebuild back on, now that we're done setting up
 
   def setup_mixer(self):
-    self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, crossfader = CROSSFADER, master = MASTER, cue = CUE_VOLUME)
+    self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, 
+        crossfader = CROSSFADER, 
+        master = MASTER, 
+        cue = CUE_VOLUME,
+        solos = SOLOS,
+        arms = ARMS,
+        mutes = MUTES)
   
   def setup_session(self):
     self.session = LividSessionComponent(matrix = MATRIX, navigation = NAVIGATION_BUTTONS, mixer = self.mixer)
