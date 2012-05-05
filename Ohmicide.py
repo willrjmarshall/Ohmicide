@@ -19,21 +19,14 @@ from _Livid_Framework.LividMixerComponent import LividMixerComponent
 from _Livid_Framework.LividSessionComponent import LividSessionComponent
 from _Livid_Framework.LividTransportComponent import LividTransportComponent
 from _Livid_Framework.LividSessionZoomingComponent import LividSessionZoomingComponent
+from _Livid_Framework.LividControlSurface import LividControlSurface
 
-class Ohmicide(ControlSurface):
+class Ohmicide(LividControlSurface):
   __module__ = __name__
   __doc__ = " Ohmicide controller script "
 
   def __init__(self, c_instance):
-    ControlSurface.__init__(self, c_instance)
-    self.set_suppress_rebuild_requests(True) # Turn off rebuild MIDI map until after we're done setting up
-
-    # Configure each of the primarily elements
-    self.setup_mixer()
-    self.setup_session()
-    self.setup_transport()
-
-    self.set_suppress_rebuild_requests(False) #Turn rebuild back on, now that we're done setting up
+    LividControlSurface.__init__(self, c_instance)
 
   def setup_mixer(self):
     self.mixer = LividMixerComponent(faders = FADERS, sends = SENDS, 
