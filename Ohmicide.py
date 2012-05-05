@@ -41,6 +41,8 @@ class Ohmicide(ControlSurface):
         master = MASTER, 
         cue = CUE_VOLUME,
         solos = SOLOS,
+        selects = TRACK_SELECTS, 
+        master_select = MASTER_SELECT, 
         arms = ARMS)
         #mutes = MUTES)
   
